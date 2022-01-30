@@ -14,7 +14,7 @@
     </div>
   </div>
   <app-warning-message
-    *ngIf="warningMessageOpen"
+    *ngIf="warningMessageText"
     [text]="warningMessageText"
     (warningMessageOpen)="handleWarningClose($event)"
   >

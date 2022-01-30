@@ -2,6 +2,7 @@
 const express = require("express");
 const { v4: uuidv4 } = require('uuid');
 const sampleData = require("../sampleData");
+const fs = require('fs');
 
 
 const router = express.Router();
@@ -11,11 +12,16 @@ router.get(CONSTANTS.ENDPOINT.MASTERDETAIL, (req, res) => {
 });
 
 // MY OWN ENDPOINT
-router.get('/test', (request, response) => {
+router.get('/test', (req, res) => {
   let fact = CONSTANTS.DATA.CATFACTS[Math.ceil(Math.random()*CONSTANTS.DATA.CATFACTS.length-1)];
-  response.json({
+  res.json({
     message: fact
   });
+});
+
+// Return url to a picture
+router.get('/picture', (req, res) => {
+  res.json({url: 'https://whatifgaming.com/wp-content/uploads/2021/10/intro-1620848947-1.jpg'});
 });
 
 // LIST ENDPOINTS

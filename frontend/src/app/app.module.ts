@@ -1,4 +1,5 @@
-﻿import { BrowserModule } from '@angular/platform-browser';
+﻿import { PictureService } from './shared/picture.service';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -25,7 +26,8 @@ import { ServiceInterceptor } from './service.interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: ServiceInterceptor,
       multi: true
-    }
+    },
+    PictureService
   ],
   bootstrap: [AppComponent]
 })

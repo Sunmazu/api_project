@@ -1,4 +1,5 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { PictureService } from './../../shared/picture.service';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
@@ -8,9 +9,21 @@ import { Location } from '@angular/common';
 })
 export class NavBarComponent implements OnInit {
   skipLinkPath: string;
-  constructor(private location: Location) { }
+  constructor(
+    private location: Location, 
+    public pictureService: PictureService
+  ) { }
+
+  picture: string;
 
   ngOnInit(): void {
     this.skipLinkPath = `${this.location.path()}#mainContent`;
+    this.pictureService.providePicture().subscribe({
+      next: url => this.picture = url,
+      
+      })
   }
+
+
+  
 }

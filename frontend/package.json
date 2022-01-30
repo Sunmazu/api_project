@@ -40,7 +40,7 @@
   },
   "proxy": "http://localhost:3001",
   "scripts": {
-    "start": "ng serve --port=3000 --o --proxy-config proxy.config.json",
+    "start": "ng serve --o --proxy-config proxy.config.json",
     "ng": "ng",
     "build": "ng build",
     "publish": "node ./scripts/publish",

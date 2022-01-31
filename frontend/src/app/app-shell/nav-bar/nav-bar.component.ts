@@ -18,12 +18,10 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.skipLinkPath = `${this.location.path()}#mainContent`;
-    this.pictureService.providePicture().subscribe({
-      next: url => this.picture = url,
+    //? example#1 - Return url to a picture
+    // this.pictureService.providePicture().subscribe({
+    //   next: url => this.picture = url,
       
-      })
+    //   })
   }
-
-
-  
 }

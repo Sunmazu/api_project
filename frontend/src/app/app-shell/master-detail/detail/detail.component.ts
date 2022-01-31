@@ -2,7 +2,7 @@
 import { ISampleOrder } from '../master-detail.model';
 
 @Component({
-  selector: 'app-page',
+  selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })

@@ -19,10 +19,37 @@ router.get('/test', (req, res) => {
   });
 });
 
-// Return url to a picture
+//? example#1 - Return url to a picture
 router.get('/picture', (req, res) => {
   res.json({url: 'https://whatifgaming.com/wp-content/uploads/2021/10/intro-1620848947-1.jpg'});
 });
+
+//? example#2 - What is and how to use it? Observable
+router.get('/observable-test/:type', (req, res) => {
+  var type = req.params['type'];
+  switch (type) {
+    case 'string':
+      res.json('I am a string');
+      break;
+    case 'number':
+      res.json(1);
+      break;
+    case 'boolean':
+      res.json(true);
+      break;
+    case 'json':
+      res.json({
+        string: 'string',
+        number: 1,
+        boolean: true,
+      });
+      break;
+    default:
+      res.send('unknown request type');
+      break;
+  }
+})
+
 
 // LIST ENDPOINTS
 router.get(CONSTANTS.ENDPOINT.LIST, function(req, res) {

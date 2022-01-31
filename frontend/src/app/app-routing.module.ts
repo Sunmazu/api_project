@@ -1,4 +1,5 @@
-﻿import { NgModule } from '@angular/core';
+﻿import { ObservableComponent } from './app-shell/observable/observable.component';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'master-detail',
     loadChildren: () => import('./app-shell/master-detail/master-detail.module').then(module => module.MasterDetailModule)
+  },
+  {
+    path: 'observable',
+    component: ObservableComponent,
   },
 ];
 

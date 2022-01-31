@@ -1,4 +1,5 @@
-﻿import { PictureService } from './shared/picture.service';
+﻿import { ObservableComponent } from './app-shell/observable/observable.component';
+import { PictureService } from './shared/picture.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -12,7 +13,12 @@ import { FooterComponent } from './app-shell/footer/footer.component';
 import { ServiceInterceptor } from './service.interceptor';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, FooterComponent],
+  declarations: [
+    AppComponent, 
+    NavBarComponent, 
+    FooterComponent,
+    ObservableComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,

@@ -11,7 +11,7 @@ router.get(CONSTANTS.ENDPOINT.MASTERDETAIL, (req, res) => {
   res.json(sampleData.textAssets);
 });
 
-// MY OWN ENDPOINT
+//? MY OWN ENDPOINT
 router.get('/test', (req, res) => {
   let fact = CONSTANTS.DATA.CATFACTS[Math.ceil(Math.random()*CONSTANTS.DATA.CATFACTS.length-1)];
   res.json({
@@ -50,8 +50,18 @@ router.get('/observable-test/:type', (req, res) => {
   }
 })
 
+//? example#3 - Posting data from the form into API and returning something
+let formData;
+router.post('/contact', (req, res) => {
+  formData = req.body;
+  res.send();
+});
 
-// LIST ENDPOINTS
+router.get('/contact', (req, res) => {
+  res.send(formData);
+});
+
+//* LIST ENDPOINTS
 router.get(CONSTANTS.ENDPOINT.LIST, function(req, res) {
   res.json(sampleData.listTextAssets);
 });
@@ -82,6 +92,5 @@ router.delete(CONSTANTS.ENDPOINT.LIST + "/:id", function(req, res) {
 router.get(CONSTANTS.ENDPOINT.GRID, (req, res) => {
   res.json(sampleData.textAssets);
 });
-
 
 module.exports = router;
